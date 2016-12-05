@@ -24,3 +24,4 @@ communicate with online.</i>
 
 # Gems
 - Google autocomplete and directions API
+- Google Maps
