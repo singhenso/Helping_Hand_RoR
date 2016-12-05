@@ -5,7 +5,7 @@ This application will provide the homeless and economically
 troubled a resource of shelter locations and a community to 
 communicate with online.</i>
 
-![screenshot](app/assets/images/Couch_Landing_Page.png)
+![screenshot](app/assets/images/Helping_Hand_Landing_Page.png)
 
 # TEAM 
 
@@ -19,9 +19,18 @@ communicate with online.</i>
 <a href="#">Dimple Patel</a>
 
 
+
 # Technologies Used
 - Ruby on Rails
 
 # Gems
 - Google autocomplete and directions API
 - Google Maps
+=======
+# Technologies Used
+
+<i>Google Embedded Maps API</i>
+<i>Google Distance Matrix API</i>
+<i>Google Street View API</i>
+<i>Google Maps API</i>
+<i>Google Places API</i>
