@@ -1,0 +1,60 @@
+<div id="add_new_user">
+  <h1 style="margin: 0px auto;">
+    <u>Sign Up</u>
+  </h1>
+  <br/>
+  <%= form_for @user do |c| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= c.label :name %>
+      <%= c.text_field :name, :class => "name_input_new_user" %>
+    </div>
+    <div class="field">
+      <%= c.label :username %>
+      <%= c.text_field :username, :class => "username_input_new_user" %>
+    </div>
+    <div class="field">
+      <%= c.label :email %>
+      <%= c.text_field :email, :class => "email_input_new_user" %>
+    </div>
+    <div class="field">
+      <%= c.label :password %>
+      <%= c.password_field :password, :class => "password_input_new_user" %>
+    </div>
+    <div class="field">
+      <%= c.label :password_confirmation %>
+      <%= c.password_field :password_confirmation, :class => "password_confirmation_input_new_user" %>
+    </div>
+    <div class="field">
+      <%= c.label :current_city %>
+      <%= c.text_field :current_city, :class => "current_city_input_new_user" %>
+    </div>
+    <div class="field">
+      <%= c.label :current_state %>
+      <%= c.text_field :current_state, :class => "current_state_input_new_user" %>
+    </div>
+    <div class="field">
+      <%= c.label :current_country %>
+      <%= c.text_field :current_country, :class => "current_country_input_new_user" %>
+    </div>
+    <div class="field">
+      <%= c.label :bio %>
+      <%= c.text_area :bio, class: "bio_input_user_edit" %>
+    </div>
+    <br/>
+    <div class="actions">
+      <%= c.submit %>
+    </div>
+  <% end %>
+</div>
