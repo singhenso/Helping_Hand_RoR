@@ -17,3 +17,8 @@ communicate with online.</i>
 <br/>
 ### Lead UX/UI Developer
 <a href="#">Dimple Patel</a>
+
+
+# Technologies Used
+
+Google autocomplete and directions API
