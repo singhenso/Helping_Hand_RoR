@@ -20,5 +20,7 @@ communicate with online.</i>
 
 
 # Technologies Used
+- Ruby on Rails
 
-Google autocomplete and directions API
+# Gems
+- Google autocomplete and directions API
