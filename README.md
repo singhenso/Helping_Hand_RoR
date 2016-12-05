@@ -18,19 +18,17 @@ communicate with online.</i>
 ### Lead UX/UI Developer
 <a href="#">Dimple Patel</a>
 
-
-
 # Technologies Used
 - Ruby on Rails
 
 # Gems
 - Google autocomplete and directions API
 - Google Maps
-=======
+
 # Technologies Used
 
-<i>Google Embedded Maps API</i>
-<i>Google Distance Matrix API</i>
-<i>Google Street View API</i>
-<i>Google Maps API</i>
-<i>Google Places API</i>
+- Google Embedded Maps API
+- Google Distance Matrix API
+- Google Street View API
+- Google Maps API
+- Google Places API
