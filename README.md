@@ -19,14 +19,8 @@ communicate with online.</i>
 <a href="#">Dimple Patel</a>
 
 # Technologies Used
+
 - Ruby on Rails
-
-# Gems
-- Google autocomplete and directions API
-- Google Maps
-
-# Technologies Used
-
 - Google Embedded Maps API
 - Google Distance Matrix API
 - Google Street View API
