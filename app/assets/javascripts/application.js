@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require 'rest_in_place'
+//= require rest_in_place
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
@@ -20,15 +20,15 @@
 
 
 $(document).on('turbolinks:load', function(){
-  $(".nav-links").css('color', '#428bca');
+  $(".nav-links").css('color', 'ghostwhite');
   $(".nav-links").hover(function(){ // Mouse over
-    $(this).css('color', 'black');
-    $(this).stop().fadeTo(300, 0.6);
-    $(this).stop().fadeTo(300, 0.3);
-  }, function(){ // Mouse out
     $(this).css('color', '#428bca');
-    $(this).stop().fadeTo(300, 1);
-    $(this).stop().fadeTo(300, 1);
+    $(this).stop().fadeTo(1000, 0.9);
+    $(this).stop().fadeTo(1000, 0.6);
+  }, function(){ // Mouse out
+    $(this).css('color', 'ghostwhite');
+    $(this).stop().fadeTo(1000, 1);
+    $(this).stop().fadeTo(1000, 1);
   });
   $(".jumbotron").hover(function(){
     $(this).focus();
@@ -38,12 +38,5 @@ $(document).on('turbolinks:load', function(){
     $(this).css('border', '0px');
   });
   $(".rest-in-place").rest_in_place();
-  $(".rest-in-place").bind('update.rest-in-place', function(e){
-    // figure out ajax put
-    // with update.rest-in-place method
-    // inside class rest-in-place-comment try
-    // to add manually the paramters
-    // and then use ajax put to update upon
-    // user pressing enter
-  });
+  // $(".rest-in-place").bind('update.rest-in-place', function(e){});
 });
