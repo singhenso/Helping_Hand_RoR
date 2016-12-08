@@ -23,12 +23,13 @@ class CommentsController < ApplicationController
     end
   end
 
+
   def update
     @comment = Comment.find(params[:id])
     if @comment.update_atributes(comment_params)
-      redirect_to @comment, notice: 'Comment Updated'
+      redirect_to @comment
     else
-      redirect_to :back, notice: 'Something went wrong...'
+      redirect_to :back
     end
   end
 

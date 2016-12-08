@@ -4,12 +4,12 @@
       <div class="panel-heading">
       <br/>
         <div id="<%= dom_id comment %>" class="panel panel-info" style="width: auto; padding: 5px;">
-          <span class="glyphicon glyphicon-edit" style="color: #428bca"></span><span class="rest-in-place comment-body" style="display: inline-block; position: relative; right: 7px;" data-attribute="comment"><div class="comment-body"><%= comment.body %></div></span>
-          <p style="color: black" class="comment-created-at"><%= comment.created_at.in_time_zone('Pacific Time (US & Canada)').strftime("%A %l:%M %P at %B %Y") %></p>
-          <p style="color: blue;" class="comment-author">from <%= comment.author %></p>
+          <span class="glyphicon glyphicon-edit" style="color: #428bca;"></span><span class="rest-in-place comment-body" data-attribute="comment"><%= comment.body %></span>
+          <p class="comment-created-at"><%= comment.created_at.in_time_zone('Pacific Time (US & Canada)').strftime("%A %l:%M %P at %B %Y") %></p>
+          <p class="comment-author">from <%= comment.author %></p>
           <br/>
           <% if comment.user_id == current_user.id %>
-            <div style="color: green"><%= link_to "Delete", comment_comment_path(comment.id), method: :delete, class: "del_comment_link bg-success btn btn-link " %>
+            <div class="div-wrapper"><%= link_to "Delete", comment_comment_path(comment.id), method: :delete, class: "del_comment_link bg-success btn btn-link" %>
             <!-- | -->
             <!-- Build out link to edit manually to send a jQuery event to
             update/edit content with autofocus and open textarea instead of

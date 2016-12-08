@@ -23,7 +23,6 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'html2haml'
 gem 'gmaps4rails', '~> 1.5', '>= 1.5.6'
 gem 'geocoder', '~> 1.3', '>= 1.3.7'
-gem 'countries', '~> 2.0', '>= 2.0.1'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_12factor', group: :production
