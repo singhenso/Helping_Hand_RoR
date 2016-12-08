@@ -1,4 +1,4 @@
-# LA_SHELTER_APP
+# Helping Hand App
 
 <i>A Mapping service for the inner cities underprivileged.
 This application will provide the homeless and economically 
@@ -9,16 +9,20 @@ communicate with online.</i>
 
 # TEAM 
 
+### Back End Ror Developer
 <a href="alex1100.software">Alex Aleksanyan</a> 
 <br/>
+### Front End Developer
 <a href="www.singhgallery.com">Singh Gagandeep</a>
 <br/>
+### Lead UX/UI Developer
 <a href="#">Dimple Patel</a>
 
 # Technologies Used
 
-<i>Google Embedded Maps API</i>
-<i>Google Distance Matrix API</i>
-<i>Google Street View API</i>
-<i>Google Maps API</i>
-<i>Google Places API</i>
+- Ruby on Rails
+- Google Embedded Maps API
+- Google Distance Matrix API
+- Google Street View API
+- Google Maps API
+- Google Places API
