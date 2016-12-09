@@ -1,11 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :authorize, only: [:create, :edit, :new, :update, :destroy]
+  before_action :authorize, only: [:create, :new, :destroy]
   before_action :find_commentable
-  before_action :check_if_comment_belongs_to_current_user, only: [:edit, :update, :destroy]
-
-  def edit
-    @comment = Comment.find(params[:comment_id])
-  end
+  before_action :check_if_comment_belongs_to_current_user, only: [:destroy]
 
   def new
     @comment = Comment.new
@@ -20,16 +16,6 @@ class CommentsController < ApplicationController
       redirect_to :back, notice: 'Your comment was successfully posted.'
     else
       redirect_to :back, notice: 'Your comment was not posted.'
-    end
-  end
-
-
-  def update
-    @comment = Comment.find(params[:id])
-    if @comment.update_atributes(comment_params)
-      redirect_to @comment
-    else
-      redirect_to :back
     end
   end
 

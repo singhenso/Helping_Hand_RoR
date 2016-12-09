@@ -9,19 +9,14 @@
           <p class="comment-author">from <%= comment.author %></p>
           <br/>
           <% if comment.user_id == current_user.id %>
-            <div class="div-wrapper"><%= link_to "Delete", comment_comment_path(comment.id), method: :delete, class: "del_comment_link bg-success btn btn-link" %>
-            <!-- | -->
-            <!-- Build out link to edit manually to send a jQuery event to
-            update/edit content with autofocus and open textarea instead of
-            a p tag then set it to a p tag once it's saves -->
-            <!--<%= link_to "Edit", edit_comment_comment_path(comment.id), class: "edit_comment_link btn btn-link bg-success" %> -->
+            <div class="div-wrapper">
+              <%= link_to "Delete", comment_comment_path(comment.id), method: :delete, class: "del_comment_link bg-success btn btn-link" %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
 
-    <!-- Build out forms manually without rails form helpers -->
     <%= form_for [comment, Comment.new] do |c| %>
       <%= c.text_area :body, placeholder: "Add a Reply" %><br/>
       <%= c.submit "Reply"  %>
