@@ -16,7 +16,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
 gem 'brakeman'
-gem 'rest_in_place'
 
 gem 'kaminari', '~> 0.17.0'
 gem 'haml', '~> 4.0', '>= 4.0.7'

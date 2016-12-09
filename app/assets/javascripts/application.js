@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require rest_in_place
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
@@ -37,6 +36,4 @@ $(document).on('turbolinks:load', function(){
     $(this).focusout();
     $(this).css('border', '0px');
   });
-  $(".rest-in-place").rest_in_place();
-  // $(".rest-in-place").bind('update.rest-in-place', function(e){});
 });

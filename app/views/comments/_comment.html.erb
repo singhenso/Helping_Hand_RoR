@@ -3,8 +3,8 @@
     <div class="panel panel-primary panel-default">
       <div class="panel-heading">
       <br/>
-        <div id="<%= dom_id comment %>" class="panel panel-info" style="width: auto; padding: 5px;">
-          <span class="glyphicon glyphicon-edit" style="color: #428bca;"></span><span class="rest-in-place comment-body" data-attribute="comment"><%= comment.body %></span>
+        <div class="panel panel-info" style="width: auto; padding: 5px;">
+          <p class="comment-body"><%= comment.body %></p>
           <p class="comment-created-at"><%= comment.created_at.in_time_zone('Pacific Time (US & Canada)').strftime("%A %l:%M %P at %B %Y") %></p>
           <p class="comment-author">from <%= comment.author %></p>
           <br/>
