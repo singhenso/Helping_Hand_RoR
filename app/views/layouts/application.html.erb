@@ -15,6 +15,12 @@
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
   </head>
 
+<!-- navbar up top / footer down below
+     and rendered content loaded
+     through ruby in between navbar
+     and footer -->
+
+
   <body>
     <div class="container">
       <nav class="navbar navbar-default">
@@ -49,9 +55,6 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                   <li >
                     <a class="nav-links dropdown-item" href="/users/<%= current_user.id %>">Profile</a>
-                  </li>
-                  <li >
-                    <a class="nav-links dropdown-item" href="/users/all_users">Find Friends</a>
                   </li>
                   <li >
                     <a class="nav-links dropdown-item" href="/locations">Shelters</a>

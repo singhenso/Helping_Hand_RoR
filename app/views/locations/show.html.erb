@@ -6,6 +6,9 @@
   src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_EMBED_API_KEY'] %>&q=<%= @location.address %>"/>
 </iframe>
 </legend>
+
+
+<!-- Google Map for waling/transit/driving directions and notes -->
 <div class="map-container jumbotron" style="background-color: #428bca">
     <input id="origin-input" class="controls" type="text"
         placeholder="Enter an origin location">
@@ -26,6 +29,8 @@
 
     <div id="map"></div>
   </div>
+
+<!-- Google Distance Matrix info for walking/bicycling distance -->
 
 <div class="jumbotron" style="background-color: #428bca">
   <p>
@@ -68,6 +73,8 @@
 
 <br>
 
+<!-- Google street view api image -->
+
 <div class="jumbotron" style="background-color: #428bca">
   <div class="google-maps">
     <%= image_tag "https://maps.googleapis.com/maps/api/streetview?size=450x300&location=#{@location.latitude.round(6)},#{@location.longitude.round(6)}&heading=90&pitch=0&key=#{ENV["GOOGLE_STREET_VIEW_API_KEY"]}"%>
@@ -77,9 +84,11 @@
 <br/>
 <br/>
 
+
+
+  <!-- Comments Section -->
 <% if current_user %>
 <h1>Leave <%= @location.name %> a comment!</h1>
-  <!-- Comments Section -->
   <div class="panel panel-primary panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">Comments</h3>
@@ -93,6 +102,9 @@
         <% end %>
       </div>
 
+  <!-- renders _comment.html.erb for rendering
+       comment created from above snippet and
+       replies created from _comment.html.erb -->
       <ul class="list-group">
         <%= render(partial: 'comments/comment', collection: @location.comments) %>
       </ul>
