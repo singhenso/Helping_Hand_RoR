@@ -4,26 +4,27 @@
   <br/>
   <div style="background-color: lightblue" class="jumbotron">
     <p><%= @user.bio %></p>
-    <p><a class="btn btn-success btn-lg" href="#" role="button">Help <%= @user.name %></a></p>
+<!-- Couldn't get the help users features delivered in time -->
+<!-- <p><a class="btn btn-success btn-lg" href="#" role="button">Help <%= @user.name %></a></p> -->
   </div>
 </div>
 
-<!-- User's Locations -->
-<h1>Frequently Visited</h1>
+<!-- List of Locations Genereated Through nearby_shelters Method for each current_city for the current_user -->
+<h1>Suggested Shelters</h1>
 <table class="table table-hover" cellpadding="10">
   <tr>
     <th>Name</th>
     <th>Address</th>
   </tr>
-  <% for location in @frequently_visited_locations %>
+  <% for location in @suggested_shelter_locations %>
     <tr>
       <td><%= link_to "#{location.name}", location, class: 'show_loc_link' %></td>
       <td><%= link_to "#{location.address}", location_path(location.id), class: 'show_loc_link' %></td>
     </tr>
   <% end %>
 </table>
-
-<%= paginate @frequently_visited_locations %>
+<!-- check out Kaminari gem github for styling docs https://github.com/amatsuda/kaminari-->
+<%= paginate @suggested_shelter_locations %>
 
 <% if current_user %>
   <!-- Comments Section -->

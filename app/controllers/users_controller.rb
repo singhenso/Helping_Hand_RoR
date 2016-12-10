@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @locations = @user.locations
-    @frequently_visited_locations = @locations.order("name").page(params[:page]).per(10)
+    @suggested_shelter_locations = @locations.order("name").page(params[:page]).per(10)
   end
 
   def edit
