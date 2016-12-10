@@ -7,10 +7,15 @@
     <br/>
     <%= p.text_field :search, placeholder: "search shelters", hide_label: true, value: params[:search], autofocus: true  %>
   <% end %>
+  <!-- Link takes user/guest to /locations/index page so all locations -->
   <%= link_to "Clear", users_path, class: "btn btn-primary" %>
 </section>
 
 <div id="locations_container">
+<!-- If something was searched when pressing enter in the search input form brings it up -->
+<!-- If user/guest pressed enter with no input in the search input form brings
+     up all locations our db currently has from all users -->
+     <!-- This and the maps should be available for both guests and users -->
   <% if params[:search] %>
     <h1 style="color: black">Search Results for <%= "#{params[:search]}" %></h1>
       <table class="table table-hover"cellpadding="10">
@@ -19,7 +24,6 @@
         <th>Address</th>
         <th>Latitude</th>
         <th>Longitude</th>
-        <th></th>
       </tr>
 
       <% for location in @locations %>
@@ -28,10 +32,10 @@
           <td><%= link_to "#{location.address}", location, class: 'show_loc_link' %></td>
           <td><%= location.latitude %></td>
           <td><%= location.longitude %></td>
-          <td><%= link_to "Remove", location_path(location.id), method: :delete, class: "del_location_link"%></td>
         </tr>
       <% end %>
     </table>
+    <!-- check out Kaminari gem github for styling docs https://github.com/amatsuda/kaminari-->
     <%= paginate @locations %>
   <% else %>
       <!-- Include normal html landing page options for both logged in users and guests of the site  -->
@@ -56,5 +60,6 @@
 
     <div id="map"></div>
   </div>
+  <!-- Include normal html landing page options for both logged in users and guests of the site  -->
     <% end %>
 </div>

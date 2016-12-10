@@ -16,7 +16,7 @@ class Location < ApplicationRecord
 
   acts_as_gmappable
 
-  private
+
   def self.search(query)
     wildcarded_query = "%#{query}%"
     where(
@@ -41,7 +41,6 @@ class Location < ApplicationRecord
     end
   end
 
-
   def self.walking_distance(current_city, address, user_location)
     uri = URI.parse("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&avoid=tolls|highways|ferries|indoor&origins=#{current_city}&destinations=#{address.delete(' ')}&mode=walking&key=#{ENV["GOOGLE_MAPS_DISTANCE_MATRIX_API_KEY"]}")
     response = Net::HTTP.get_response(uri)
@@ -64,21 +63,6 @@ class Location < ApplicationRecord
     if user_location && distance && eta
       result = "#{address} is #{distance["elements"][0]["distance"]["text"]} away from #{current_city} and it would take #{eta["elements"][0]["duration"]["text"]} via bicycling."
     end
-  end
-
-  # might need it for bottom two methods
-  def self.current_city_google_place_id(current_city)
-    uri = URI.parse("https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{current_city.delete(' ')}&key=#{ENV["GOOGLE_PLACES_API_KEY"]}")
-    response = Net::HTTP.get_response(uri)
-    place_id = JSON.parse(response.body)["results"]["place_id"]
-  end
-
-  def self.transit_distance
-    # try to get this working
-  end
-
-  def self.transit_fare
-    # try to get this working
   end
 
 end

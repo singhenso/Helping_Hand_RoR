@@ -1,3 +1,4 @@
+<!-- Search bar for searching shelters could be edited css wise -->
 <section class="form-group align-right" style="display: block;">
   <%= bootstrap_form_tag location: locations_path, method: :get do |p| %>
     <br/>
@@ -7,10 +8,12 @@
     <%= p.text_field :search, placeholder: "search shelters", hide_label: true, value: params[:search], autofocus: true  %>
   <% end %>
 
+<!-- Link takes user/guest to /locations/index page so all locations -->
   <%= link_to "Clear", locations_path, class: "btn btn-primary" %>
 </section>
 
 <div id="locations_container">
+<!-- If something was searched when pressing enter in the search input form -->
   <% if params[:search] %>
     <h1 style="color: black">Search Results for <%= "#{params[:search]}" %></h1>
       <table class="table table-hover"cellpadding="10">
@@ -30,8 +33,10 @@
         </tr>
       <% end %>
     </table>
+    <!-- check out Kaminari gem github for styling docs https://github.com/amatsuda/kaminari-->
     <%= paginate @locations %>
     <% else %>
+    <!-- If user/guest pressed enter with no input in the search input form -->
     <h1>Browse All Locations</h1>
     <table class="table table-hover"cellpadding="10">
       <tr>
@@ -50,6 +55,7 @@
         </tr>
       <% end %>
     </table>
+    <!-- check out Kaminari gem github for styling docs https://github.com/amatsuda/kaminari-->
     <%= paginate @all_locations %>
 <% end %>
 </div>
